@@ -1,6 +1,11 @@
 styler = {
 	pg : {
-		temp : ""
+		temp : "",
+		code : {
+			"backgroundColor" : "background-color",
+			"fontColor" : "color",
+			"fontSize" : "font-size"
+		}
 	},
 	ui : {
 		openPopup : function(){
@@ -12,6 +17,16 @@ styler = {
 		}
 	},
 	ctl : {
+		initLivePreview : function(){
+			preview = setInterval(function(){
+				var string = "";
+				$.each($(".liveUpdate"), function(index,item){
+					var temp = styler.pg.code[$(item).attr("id")]
+					string += temp+":"+ $(item).val()+";";
+				})
+				$("#stylingPreview").attr("style", string);
+			},500)
+		},
 		initColorPicker : function(){
 			$(".colorPick").ColorPicker({
 				onShow : function (colpkr){
@@ -42,4 +57,6 @@ styler = {
 
 $(function(){
 	styler.ctl.eventBinding();
+	styler.ctl.initColorPicker();
+	styler.ctl.initLivePreview();
 })
