@@ -25,11 +25,28 @@
 	padding-left: 15px;
 }
 
+#styler #stylingPreview{
+	float:right;
+	width: 400px;
+	height: 500px;
+	border: 1px solid #aaa;
+	border-radius: 15px;
+	margin-right: 60px;
+}
+
 #styler #stylingForm{
 	padding: 15px;
 }
 
+#styler #stylingForm div{
+	padding-bottom: 10px;
+}
+
 #styler #stylingForm div span{
-	width: 100px;
+	width: 200px;
 	display:inline-block;
+}
+
+.colorpicker{
+	z-index:1500;
 }

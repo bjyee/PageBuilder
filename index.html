@@ -4,6 +4,7 @@
 		<title>Page Builder</title>
 		<script src="js/jquery/jquery-1.9.1.js"></script>
 		<script src="js/jquery/jquery-ui.js"></script>
+		<script src="js/jquery/colorpicker.js"></script>
 		
 		<!-- My js scripts  -->
 		<script src="js/index.js"></script>
@@ -11,6 +12,7 @@
 		<script src="js/styler.js"></script>
 		
 		<link rel="stylesheet" href="css/jquery/jquery-ui.css" />
+		<link rel="stylesheet" href="css/jquery/colorpicker.css" />
 
 		<!-- My css scripts  -->
 		<link rel="stylesheet" href="css/index.css" />
@@ -29,14 +31,21 @@
 		<div id="stylePopup">
 			<div id="styler">
 				<h2>Style Your Content</h2>
+				<div id="stylingPreview"></div>
 				<div id="stylingForm">
+				    <h3>Background</h3>
+					<div>
+                        <span>Background Color</span>
+                        <input type="text" name="backgroundColor" id="backgroundColor" class="liveUpdate colorPick"/>
+                    </div>
+                    <h3>Fonts</h3>
 					<div>
 						<span>Font Size</span>
-						<input type="text" name="fontSize" class="liveUpdate"/>
+						<input type="text" name="fontSize" id="fontSize" class="liveUpdate"/>px
 					</div>
 					<div>
 						<span>Font Color</span>
-						<input type="text" name="fontColor" class="liveUpdate"/>
+						<input type="text" name="fontColor" id="fontColor" class="liveUpdate colorPick"/>
 					</div>
 				</div>
 			</div>

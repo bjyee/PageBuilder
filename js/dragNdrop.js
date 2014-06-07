@@ -10,7 +10,7 @@ dragNdrop = {
 			if(dragNdrop.pg.content.header == 0){
 				dragNdrop.pg.content.header = 1;
 				var temp = "<div id='droppedHeader'>";
-				temp += "<div class='message'>Drag an image <br>to upload it.</div>"
+				temp += "<div class='message'>Drag an image <br>to upload.</div>"
 				temp += "</div>";
 				$("#page").append(temp);
 				dragNdrop.ui.imageUpload();
@@ -33,6 +33,16 @@ dragNdrop = {
 				start : function(event,ui){
 					var temp = "<div id='resizingOverlay'></div>";
 					ui.element.append(temp);
+					var height = ui.helper.height() + 2;
+					var width = ui.helper.width() + 2;
+					var temp = "<div id='resizingD'>";
+					temp += width+" X "+height;
+					temp += "</div>";
+					$("#resizingOverlay").html(temp)
+					$("#resizingD").css({
+						"margin-left" : -($("#resizingD").width()/2)+"px",
+						"margin-top" : -($("#resizingD").height()/2)+"px",
+					})
 				},
 				resize : function(event, ui){
 					var height = ui.helper.height() + 2;
