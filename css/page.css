@@ -38,9 +38,10 @@
 	position:absolute;
 	left:0;
 	border:1px dashed black;
-	height:98px;
-	width:98px;
+	height:198px;
+	width:198px;
 	z-index:1;
+	font-weight:normal;
 }
 
 #resizingOverlay{

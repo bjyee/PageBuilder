@@ -60,7 +60,7 @@ index = {
 			$("#page").on("dblclick",function(e){
 				var target = $(e.target);
 				if(target.attr("class").indexOf("droppedContent") != -1){
-					styler.ui.openPopup();
+					styler.ui.openPopup(target.attr("data-num"));
 				}
 			})
 		}

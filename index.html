@@ -5,6 +5,7 @@
 		<script src="js/jquery/jquery-1.9.1.js"></script>
 		<script src="js/jquery/jquery-ui.js"></script>
 		<script src="js/jquery/colorpicker.js"></script>
+		<script src="js/jquery/spectrum.js"></script>
 		
 		<!-- My js scripts  -->
 		<script src="js/index.js"></script>
@@ -13,6 +14,7 @@
 		
 		<link rel="stylesheet" href="css/jquery/jquery-ui.css" />
 		<link rel="stylesheet" href="css/jquery/colorpicker.css" />
+        <link rel="stylesheet" href="css/jquery/spectrum.css" />
 
 		<!-- My css scripts  -->
 		<link rel="stylesheet" href="css/index.css" />
@@ -36,7 +38,8 @@
 				    <h3>Background</h3>
 					<div>
                         <span>Background Color</span>
-                        <input type="text" name="backgroundColor" id="backgroundColor" class="liveUpdate colorPick"/>
+                        <input type="text" name="backgroundColor1" id="backgroundColor1" class="colorPick"/>
+                        <input id="backgroundColor" class="liveUpdate" style="display:inline-block"/>
                     </div>
                     <h3>Fonts</h3>
 					<div>
@@ -44,8 +47,13 @@
 						<input type="text" name="fontSize" id="fontSize" class="liveUpdate"/>px
 					</div>
 					<div>
+                        <span>Font Weight</span>
+                        <input type="text" name="fontWeight" id="fontWeight" class="liveUpdate"/>
+                    </div>
+					<div>
 						<span>Font Color</span>
-						<input type="text" name="fontColor" id="fontColor" class="liveUpdate colorPick"/>
+						<input type="text" name="fontColor1" id="fontColor1" class="colorPick"/>
+                        <input id="fontColor" class="liveUpdate" style="display:inline-block"/>
 					</div>
 				</div>
 			</div>

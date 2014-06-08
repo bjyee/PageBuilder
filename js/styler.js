@@ -4,19 +4,34 @@ styler = {
 		code : {
 			"backgroundColor" : "background-color",
 			"fontColor" : "color",
-			"fontSize" : "font-size"
+			"fontSize" : "font-size",
+			"fontWeight" : "font-weight",
 		}
 	},
 	ui : {
-		openPopup : function(){
+		openPopup : function(id){
 			$("#stylePopup").fadeIn("fast");
 			$("html, body").animate({ scrollTop: 0 }, "fast");
+			styler.ctl.loadValues(id);
 		},
 		closePopup : function(){
 			$("#stylePopup").fadeOut("fast");
 		}
 	},
 	ctl : {
+		loadValues : function(id){
+			var target = $("*[data-num='"+id+"']")
+			$.each(styler.pg.code, function(index,item){
+				console.log(target.css(item))
+				if(typeof target.css(item) == "string" && target.css(item).indexOf("rgb") != -1){
+					var rgb = target.css(item);
+					$("#"+index).val(target.css(item));
+				}else{
+					var removePX = target.css(item).replace("px", "");
+					$("#"+index).val(removePX);
+				}
+			})
+		},
 		initLivePreview : function(){
 			preview = setInterval(function(){
 				var string = "";
@@ -28,21 +43,13 @@ styler = {
 			},500)
 		},
 		initColorPicker : function(){
-			$(".colorPick").ColorPicker({
-				onShow : function (colpkr){
-					$(colpkr).fadeIn(500);
-					styler.pg.temp = "#" + $(this).attr("id");
-					return false;
-				},
-				onHide: function (colpkr) {
-					$(colpkr).fadeOut(500);
-					return false;
-				},
-				onChange: function (hsb, hex, rgb, el) {
-					var temp = styler.pg.temp;
-					$(temp).val('#' + hex);
+			$(".colorPick").spectrum({
+				showAlpha : true,
+				move: function(color){
+					var output = $(this).attr("id").replace("1", "")
+					$("#"+output).val(color.toRgbString())
 				}
-			});
+			})
 		},
 		eventBinding : function(){
 			$("#stylePopup").on("click",function(e){
