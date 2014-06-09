@@ -73,6 +73,9 @@ styler = {
 			preview = setInterval(function(){
 				var string = "";
 				$.each($(".liveUpdate"), function(index,item){
+					if(typeof $("#"+$(item).attr("id")+"1").attr("class")!="undefined" && $("#"+$(item).attr("id")+"1").attr("class").indexOf("colorPick")!=-1){
+						$("#"+$(item).attr("id")+"1").spectrum("set", $(item).val());
+					}
 					var temp = styler.pg.code[$(item).attr("id")]
 					string += temp+":"+ $(item).val()+";";
 				})
