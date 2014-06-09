@@ -17,7 +17,7 @@
 	border: 1px solid #aaa;
 	border-radius: 15px;
 	background: #fff;
-	height: 1100px;
+	height: 700px;
 	width: 900px;
 }
 
@@ -49,6 +49,26 @@
 	display:inline-block;
 }
 
-.colorpicker{
-	z-index:1500;
+#styler #dropdown{
+	width: 150px;
+	height:100px;
+	position: absolute;
+	z-index:100;
+	border:1px solid #aaa;
+	background-color: #fff;
+	border-radius: 5px;
+	display:none;
+	overflow:auto;
+}
+
+#styler #dropdown .dropdownItem{
+	padding: 5px;
+}
+
+#styler #dropdown .dropdownItem:hover{
+	background-color:#aaa;
+}
+
+#styler #save, #styler #cancel{
+	padding-bottom:0 !important;
 }
